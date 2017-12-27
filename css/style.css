@@ -1,0 +1,410 @@
+@font-face {
+font-family:"Avenir ltstd";
+src: url('../police/AvenirLTStd-Light.woff');
+}
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body {
+    background-color: #1a1a1a;
+}
+
+.movieContainer{
+display:none;
+background-color: #1a1a1a;
+/*display:flex;*/
+width:100%;
+margin:0 auto;
+justify-content:space-around;
+height:100vh;
+align-items:center;
+position:absolute;
+border-radius:5px;
+/*background:rgba(0,0,0,0.5);*/
+
+}
+.containerVideo
+{
+  position:relative;
+  width:37%;
+
+}
+.media-video
+{
+
+  position:relative;
+
+}
+.btnLayerPlay
+{
+  border-radius:50%;
+  top:50%;
+  left:50%;
+  width:80px;
+  height:80px;
+  background:#629383;
+  border:none;
+  cursor:pointer;
+  color:#0e0e0e;
+  font-size:20px;
+  position:absolute;
+  z-index:1;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+@keyframes vanish{
+from{width:80px;
+height:80px;
+opacity:1;}
+  to{width:120px;
+  height:120px;
+  opacity:0;
+  z-index:-1;
+    }
+
+
+}
+.play-pause-button,.full-screen,.volume,.previous,.next,.stop
+{
+  background:none;
+  border:none;
+  cursor:pointer;
+}
+
+.media-controls
+{
+  position:absolute;
+  display:flex;
+  justify-content: space-around;
+  align-items:center;
+  width:100%;
+  height:50px;
+  background:#629383;
+  bottom:3px;
+  z-index:1;
+  opacity:0;
+
+}
+
+.timerContainer
+{
+  position:absolute;
+  bottom:53px;
+  display:flex;
+  justify-content:space-between;
+  width:100%;
+  height:15px;
+  align-items:center;
+  color:white;
+  z-index:1;
+  opacity:0;
+
+}
+
+@keyframes visible{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+@keyframes invisible{
+from{opacity:1;}
+to{opacity:0;}
+}
+
+.volumeContainer
+{
+
+  width:33%;
+  padding:0 5%;
+
+}
+
+
+
+.middle
+{
+  display:flex;
+  justify-content:center;
+  flex:2;
+}
+.full-screen
+{
+  width:33%;
+  padding-left:10%;
+}
+
+.backContainer
+{
+  position:absolute;
+  display:flex;
+  align-items:center;
+  width:110px;
+  justify-content:space-around;
+  top:4%;
+  left:3%;
+  color:white;
+  font-family: "Avenir ltstd";
+  color:#629383;
+  cursor:pointer;
+}
+
+
+.progressBarControle
+{
+  flex:2;
+  background:#34594d;
+  display:flex;
+  height:15px;
+  align-items:center;
+  margin:0 1%;
+
+}
+.progressBar{
+  display:inline-block;
+  width:0;
+  background:white;
+  height:15px;
+}
+.progressBarImg
+{
+  display:none;
+  position:relative;
+  left:-6px;
+}
+.timeBegin,.timeLast{
+  margin:0 auto;
+  width:50px;
+  font-size:15px;
+  text-align:center;
+}
+/****************************
+****RANGE STYLE ATTENTION****
+*****************************/
+/* cf :http://danielstern.ca/range.css/#/ */
+input[type=range].volume {
+  -webkit-appearance: none;
+  width: 40%;
+  margin-bottom:7px;
+}
+input[type=range].volume:focus {
+  outline: none;
+}
+input[type=range].volume::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+  background: #34594d;
+  border-radius: 1.3px;
+  border: 0.2px solid #000101;
+}
+input[type=range].volume::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  border: 0px solid rgba(180, 184, 181, 0);
+  height: 20px;
+  width: 20px;
+  border-radius: 50px;
+  background: #0e0e0e;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -8.2px;
+}
+input[type=range].volume:focus::-webkit-slider-runnable-track {
+  background: #NaNNaNNaN;
+}
+input[type=range].volume::-moz-range-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+  background: #34594d;
+  border-radius: 1.3px;
+  border: 0.2px solid #000101;
+}
+input[type=range].volume::-moz-range-thumb {
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  border: 0px solid rgba(180, 184, 181, 0);
+  height: 20px;
+  width: 20px;
+  border-radius: 50px;
+  background: #0e0e0e;
+  cursor: pointer;
+}
+input[type=range].volume::-ms-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range].volume::-ms-fill-lower {
+  background: #NaNNaNNaN;
+  border: 0.2px solid #000101;
+  border-radius: 2.6px;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+}
+input[type=range].volume::-ms-fill-upper {
+  background: #34594d;
+  border: 0.2px solid #000101;
+  border-radius: 2.6px;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+}
+input[type=range].volume::-ms-thumb {
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  border: 0px solid rgba(180, 184, 181, 0);
+  height: 20px;
+  width: 20px;
+  border-radius: 50px;
+  background: #0e0e0e;
+  cursor: pointer;
+  height: 4px;
+}
+input[type=range].volume:focus::-ms-fill-lower {
+  background: #34594d;
+}
+input[type=range].volume:focus::-ms-fill-upper {
+  background: #NaNNaNNaN;
+}
+/* style fiche */
+/* Fiche entière */
+
+.fiche {
+    display: block;
+    width: 50%;
+    background-color: rgb(22, 22, 22);
+    font-family: "Avenir", Arial, sans-serif;
+    color: #fff;
+    box-shadow: 1px 2px 8px #111111;
+    padding-left: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 30px;
+    text-align: justify;
+}
+
+
+/* Titre Principale */
+
+h1 {
+    text-transform: uppercase;
+    color: #9decd2;
+    font-family:"Avenir ltstd";
+    font-weight: bold;
+}
+
+
+/* Les titres descript' */
+
+.bold {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #5ea28b;
+}
+
+
+/* Description */
+
+.descrip {
+    color: rgb(107, 107, 107);
+    font-family: 'Arial', sans-serif;
+    font-size: 15px;
+    font-family: 'Arial';
+}
+
+
+/* Description du film */
+
+.descrip1 {
+    font-size: 14px;
+    background: rgb(39, 39, 39);
+    padding: 10px 10px 10px 10px;
+    width: 600px;
+    border-radius: 0px 10px 0px 10px;
+    color: #9decd2;
+}
+
+
+/* Star Rating */
+
+.star-cb-group {
+    /* remove inline-block whitespace */
+    font-size: 0;
+    /* flip the order so we can use the + and ~ combinators */
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    /* the hidden clearer */
+}
+
+.star-cb-group * {
+    font-size: 1rem;
+}
+
+.star-cb-group>input {
+    display: none;
+}
+
+.star-cb-group>input+label {
+    /* only enough room for the star */
+    display: inline-block;
+    overflow: hidden;
+    text-indent: 9999px;
+    width: 1em;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.star-cb-group>input+label:before {
+    display: inline-block;
+    text-indent: -9999px;
+    content: "☆";
+    color: #888;
+}
+
+.star-cb-group>input:checked~label:before,
+.star-cb-group>input+label:hover~label:before,
+.star-cb-group>input+label:hover:before {
+    content: "★";
+    color: #5ea28b;
+    text-shadow: 0 0 1px #333;
+}
+
+.star-cb-group>.star-cb-clear+label {
+    text-indent: -9999px;
+    width: .5em;
+    margin-left: -.5em;
+}
+
+.star-cb-group>.star-cb-clear+label:before {
+    width: .5em;
+}
+
+.star-cb-group:hover>input+label:before {
+    content: "☆";
+    color: #888;
+    text-shadow: none;
+}
+
+.star-cb-group:hover>input+label:hover~label:before,
+.star-cb-group:hover>input+label:hover:before {
+    content: "★";
+    color: #5ea28b;
+    text-shadow: 0 0 1px #333;
+}
+
+:root {
+    font-size: 18px;
+    font-family: Helvetica, arial, sans-serif;
+}
+
+fieldset {
+    width: 5em;
+    border-radius: 1px;
+}
+
+#log {
+    margin: 1em auto;
+    width: 5em;
+    text-align: center;
+    background: transparent;
+}

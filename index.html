@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Player</title>
+</head>
+
+<body>
+
+
+    <div class="movieContainer">
+          <div class="containerVideo">
+            <button class="btnLayerPlay">play</button>
+            <video class='media-video' width='100%'>
+            </video>
+            <div class="timerContainer">
+              <span class="timeBegin">00:00</span>
+              <div class="progressBarControle"><span class="progressBar"></span><img class="progressBarImg" src="img/progressbar-logo.png" alt="progress bar"></div>
+              <span class="timeLast">00:00</span>
+            </div>
+
+            <div class='media-controls'>
+              <div class="volumeContainer"><img class="volumeImg" src="img/speaker.png" alt="speaker"><input class="volume" type="range" step="0.1" min="0" max="1" width="100"></div>
+
+              <div class="middle">
+                <button class="stop" type="button" name="previous"><img src="img/video-player-stop-button.png" alt="stop"></button>
+                <button class='play-pause-button' type="button"><img class="img-play" src="img/play-button.png" alt="play"></button>
+
+              </div>
+              <button class="full-screen" type="button"><img class="screenImg"src="img/full-screen.png" alt="full screen"></button>
+
+            </div>
+            <div class="backContainer"><img src="img/back.png" alt="back">
+              <p>Retour</p>
+            </div>
+        </div>
+        <div class="fiche info">
+            <h1 class="title"></h1><br><br>
+            <p class="descrip">
+                <span class="bold duration"></span></p><br>
+            <p class="descrip">
+                <span class="bold author"></span></p><br>
+            <p class="descrip1 description">What if there was an Empire-focussed short Star Wars animation, drawn with the crazy detail and shading of classic 80s anime that's all but vanished from Japan nowadays?
+                <br /> Well, I tried my best. Apologies in advance for not living up to Venus Wars standards.
+                <br /> Drawn and animated by yours truly over 4 years\' worth of weekends, with music by the living guitar solo Zak Rahman and sound design by up and coming audio technician Joseph Leyva. Fans of Lucasarts\' seminal 1994 TIE Fighter game may
+                notice a few familiar sights and sounds. That “incoming missile” noise gives me horrible flashbacks to this day...
+            </p><br>
+            <p class="descrip">
+                <span class="bold year"></span></p><br>
+            <p class="descrip">
+                <span class="bold language"></span></p><br>
+            <p class="descrip">
+                <span class="bold sub"></span></p><br>
+            <p class="descrip">
+                <span class="bold category"></span></p><br>
+            <p class="descrip">
+                <span class="bold note">Note</span>
+        </div>
+      </div>
+    </div>
+<button class="item">button 1</button>
+<button class="item">button 2</button>
+<button class="item">button 3</button>
+<button class="item">button 4</button>
+<button class="item">button 5</button>
+<button class="item">button 6</button>
+
+  <script src="js\data.js"></script>
+  <script src="js\player.js"></script>
+
+</body>
+
+</html>
