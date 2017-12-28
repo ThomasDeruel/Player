@@ -195,7 +195,7 @@ var containerMovie = document.querySelector('.movieContainer');
 for (let a = 0; a< items.length; a++) {
   items[a].addEventListener('click', function(){
       containerMovie.style.display = "flex";
-      video.innerHTML = "<source src="+data.films[a].src+" type='video/mp4'>";
+      video.innerHTML = "<source src=video/"+data.films[a].src+" type='video/mp4'>";
       video.load();
       title.innerHTML     = ' Titre : '       + data.films[a].title;
       author.innerHTML    = 'Auteur : '       + data.films[a].author;
